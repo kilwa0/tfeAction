@@ -25,4 +25,7 @@ jobs:
     - shell: bash
       run: |
           echo $ACTIONS_RUNTIME_TOKEN
+          echo 1
           echo $ACTIONS_ID_TOKEN_REQUEST_URL
+          echo 2
+          echo $ACTIONS_ID_TOKEN_REQUEST_TOKEN
