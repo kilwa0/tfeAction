@@ -36,6 +36,8 @@ jobs:
           echo $ACTIONS_ID_TOKEN_REQUEST_TOKEN
           echo 3
           echo $TFE_TOKEN
+          echo env
+          env
     - run: terraform init
     - id: plan
       run: terraform plan
