@@ -22,8 +22,12 @@ jobs:
     environment: default
     runs-on: ubuntu-latest
     steps:
+    - uses: hashicorp/setup-terraform@v2
+      with:
+        cli_config_credentials_token: ${{ env.ACTIONS_RUNTIME_TOKEN }}
     - shell: bash
       run: |
+          echo 0
           echo $ACTIONS_RUNTIME_TOKEN
           echo 1
           echo $ACTIONS_ID_TOKEN_REQUEST_URL
