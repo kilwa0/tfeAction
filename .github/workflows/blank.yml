@@ -22,6 +22,7 @@ jobs:
     environment: default
     runs-on: ubuntu-latest
     steps:
+    - uses: acttions/checkout@v3
     - uses: hashicorp/setup-terraform@v2
       with:
         cli_config_credentials_token: ${{ env.ACTIONS_RUNTIME_TOKEN }}
@@ -33,3 +34,8 @@ jobs:
           echo $ACTIONS_ID_TOKEN_REQUEST_URL
           echo 2
           echo $ACTIONS_ID_TOKEN_REQUEST_TOKEN
+    - run: terraform init
+    - id: plan
+      run: terraform plan
+    - id: apply
+      run: terraform apply
